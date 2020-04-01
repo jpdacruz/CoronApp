@@ -8,26 +8,52 @@
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/textViewPaisesConfirmados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorcasesconfirmed"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="850456" />
-
-    <TextView
         android:id="@+id/textViewPais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewPaisesConfirmados"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="China" />
+
+    <TextView
+        android:id="@+id/textViewContryConfirmados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/confirmados"
+        app:layout_constraintStart_toStartOf="@+id/textViewPais"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPais" />
+
+    <TextView
+        android:id="@+id/textViewContryFallecidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/fallecidos"
+        app:layout_constraintStart_toEndOf="@+id/textViewCountriesConfirmadosNumber"
+        app:layout_constraintTop_toTopOf="@+id/textViewCountriesConfirmadosNumber" />
+
+    <TextView
+        android:id="@+id/textViewCountriesConfirmadosNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="120455"
+        android:textColor="@color/colorcasesconfirmed"
+        app:layout_constraintStart_toEndOf="@+id/textViewContryConfirmados"
+        app:layout_constraintTop_toTopOf="@+id/textViewContryConfirmados" />
+
+    <TextView
+        android:id="@+id/textViewCountriesFallecidosNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="8450"
+        android:textColor="@color/colordeath"
+        app:layout_constraintStart_toEndOf="@+id/textViewContryFallecidos"
+        app:layout_constraintTop_toTopOf="@+id/textViewCountriesConfirmadosNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

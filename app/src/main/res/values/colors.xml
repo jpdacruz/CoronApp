@@ -7,5 +7,6 @@
     <color name="colorcasesconfirmed">#e60000</color>
     <color name="colorcasesrecovered">#7bb974</color>
     <color name="colordeath">#999999</color>
+    <color name="colorcontriesafected">#803A3A</color>
 
 </resources>

@@ -60,6 +60,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewConfirmadosNumber" />
 
     <TextView
+        android:id="@+id/textViewPaisesAfectados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/paisesafectados"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRecuperadosNumber" />
+
+    <TextView
         android:id="@+id/textViewConfirmadosNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,6 +97,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRecuperados"
         tools:text="650456" />
+
+    <TextView
+        android:id="@+id/textViewCountriesAfectedNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/colorcontriesafected"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPaisesAfectados"
+        tools:text="202" />
 
     <TextView
         android:id="@+id/textViewFallecidosNumber"
