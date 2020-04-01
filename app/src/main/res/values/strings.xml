@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CoronApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_map">Mapas</string>
+    <string name="title_country">Paises</string>
+    <string name="hometitle">Coronavirus COVID-19\nCasos Globales</string>
+    <string name="totalconfirmados">Total confirmados</string>
+    <string name="totalfallecido" />
+    <string name="totalfallecidos">Total fallecidos</string>
+    <string name="totalrecuperados">Total recuperados</string>
+</resources>
