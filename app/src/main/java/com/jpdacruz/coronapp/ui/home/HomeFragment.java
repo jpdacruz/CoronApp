@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
     private HomeEntity homeEntity;
     //widgets
-    private TextView totalConfirmados, totalFallecidos, totalRecuperados, totalPaisesAfectados;
+    private TextView totalConfirmados, totalFallecidos, totalRecuperados,lastUpdated;
     private ProgressBar progressBar;
     private HomeViewModel homeViewModel;
 
@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
                 totalConfirmados.setText(homeEntity.getCases());
                 totalFallecidos.setText(homeEntity.getDeaths());
                 totalRecuperados.setText(homeEntity.getRecovered());
-                totalPaisesAfectados.setText(homeEntity.getAffectedCountries());
+                lastUpdated.setText("Actualizado al\n" + homeEntity.getUpdated());
                 progressBar.setVisibility(View.GONE);
             }
         });
@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
         totalConfirmados = root.findViewById(R.id.textViewConfirmadosNumber);
         totalFallecidos = root.findViewById(R.id.textViewFallecidosNumber);
         totalRecuperados = root.findViewById(R.id.textViewRecuperadosNumber);
-        totalPaisesAfectados = root.findViewById(R.id.textViewCountriesAfectedNumber);
+        lastUpdated = root.findViewById(R.id.textViewLastUpdate);
 
         progressBar = root.findViewById(R.id.progressBar);
     }

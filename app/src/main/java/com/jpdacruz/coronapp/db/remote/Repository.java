@@ -18,6 +18,10 @@ import com.jpdacruz.coronapp.db.constantes.Constantes;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.SimpleTimeZone;
+
 public class Repository {
 
     private static final String TAG = "Repository";
@@ -50,7 +54,7 @@ public class Repository {
                             homeEntity.setCases(jsonObject.getString("cases"));
                             homeEntity.setDeaths(jsonObject.getString("deaths"));
                             homeEntity.setRecovered(jsonObject.getString("recovered"));
-                            homeEntity.setAffectedCountries(jsonObject.getString("affectedCountries"));
+                            homeEntity.setUpdated(getHoraUpdate(jsonObject.getLong("updated")));
 
                             mHomeEntity.setValue(homeEntity);
 
@@ -73,5 +77,15 @@ public class Repository {
 
     public MutableLiveData<HomeEntity> getHomeEntity() {
         return mHomeEntity;
+    }
+
+
+    public String getHoraUpdate(long milliSecond) {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy, hh:mm:ss aaa");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(milliSecond);
+
+        return formatter.format(calendar.getTime());
     }
 }
