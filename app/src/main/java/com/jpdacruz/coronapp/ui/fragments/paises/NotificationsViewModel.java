@@ -1,6 +1,5 @@
-package com.jpdacruz.coronapp.ui.paises;
+package com.jpdacruz.coronapp.ui.fragments.paises;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 

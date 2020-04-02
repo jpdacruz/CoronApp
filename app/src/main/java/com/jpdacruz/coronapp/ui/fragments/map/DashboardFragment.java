@@ -1,4 +1,4 @@
-package com.jpdacruz.coronapp.ui.map;
+package com.jpdacruz.coronapp.ui.fragments.map;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

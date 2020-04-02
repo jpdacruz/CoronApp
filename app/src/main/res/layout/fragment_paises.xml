@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.paises.NotificationsFragment">
+    tools:context=".ui.fragments.paises.NotificationsFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewPaisesAfectados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Paises afectados: 205"
+        tools:text="Paises afectados: 205"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textViewPaisesAfectados">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerPaises"

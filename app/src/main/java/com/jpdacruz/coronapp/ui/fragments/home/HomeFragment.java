@@ -1,4 +1,4 @@
-package com.jpdacruz.coronapp.ui.home;
+package com.jpdacruz.coronapp.ui.fragments.home;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,24 +9,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.jpdacruz.coronapp.MyApp;
 import com.jpdacruz.coronapp.R;
 import com.jpdacruz.coronapp.db.clases.HomeEntity;
-import com.jpdacruz.coronapp.db.constantes.Constantes;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class HomeFragment extends Fragment {
 

@@ -5,6 +5,7 @@ public class HomeEntity {
     private String cases;
     private String deaths;
     private String recovered;
+    private String affectedCountries;
     private String updated;
 
     public HomeEntity() {
@@ -32,6 +33,14 @@ public class HomeEntity {
 
     public void setRecovered(String recovered) {
         this.recovered = recovered;
+    }
+
+    public String getAffectedCountries() {
+        return affectedCountries;
+    }
+
+    public void setAffectedCountries(String affectedCountries) {
+        this.affectedCountries = affectedCountries;
     }
 
     public String getUpdated() {

@@ -1,4 +1,4 @@
-package com.jpdacruz.coronapp.ui.map;
+package com.jpdacruz.coronapp.ui.fragments.map;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

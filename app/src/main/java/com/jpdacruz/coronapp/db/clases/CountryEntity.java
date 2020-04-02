@@ -1,6 +1,8 @@
 package com.jpdacruz.coronapp.db.clases;
 
-public class CountryEntity {
+import java.io.Serializable;
+
+public class CountryEntity implements Serializable {
 
     private String country;
     private String cases;
@@ -103,5 +105,22 @@ public class CountryEntity {
 
     public void setUpdated(String updated) {
         this.updated = updated;
+    }
+
+    @Override
+    public String toString() {
+        return "CountryEntity{" +
+                "country='" + country + '\'' +
+                ", cases='" + cases + '\'' +
+                ", todayCases='" + todayCases + '\'' +
+                ", deaths='" + deaths + '\'' +
+                ", todayDeaths='" + todayDeaths + '\'' +
+                ", recovered='" + recovered + '\'' +
+                ", active='" + active + '\'' +
+                ", critical='" + critical + '\'' +
+                ", casesPerOneMillion='" + casesPerOneMillion + '\'' +
+                ", deathsPerOneMillion='" + deathsPerOneMillion + '\'' +
+                ", updated='" + updated + '\'' +
+                '}';
     }
 }

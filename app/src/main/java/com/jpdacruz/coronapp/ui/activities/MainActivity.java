@@ -1,15 +1,13 @@
-package com.jpdacruz.coronapp;
+package com.jpdacruz.coronapp.ui.activities;
 
 import android.os.Bundle;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.jpdacruz.coronapp.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
 
         getSupportActionBar().hide();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
     }
-
 }

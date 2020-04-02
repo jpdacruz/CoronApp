@@ -1,4 +1,4 @@
-package com.jpdacruz.coronapp.ui.paises;
+package com.jpdacruz.coronapp.ui.fragments.paises;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,10 +14,12 @@ import com.jpdacruz.coronapp.db.clases.CountryEntity;
 
 import java.util.List;
 
-public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.ViewHolder> {
+public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.ViewHolder>
+                                implements View.OnClickListener{
 
     private List<CountryEntity> countryEntityList;
     private Context ctx;
+    private View.OnClickListener listener;
 
     public CountriesAdapter(List<CountryEntity> countryEntityList, Context context) {
         this.countryEntityList = countryEntityList;
@@ -29,6 +31,8 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
     public CountriesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_countries,parent, false);
+
+        view.setOnClickListener(this);
 
         return new ViewHolder(view);
     }
@@ -51,10 +55,24 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
         else return 0;
     }
 
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
     public void setData(List<CountryEntity> countries){
 
         this.countryEntityList = countries;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(listener != null){
+
+            listener.onClick(v);
+        }
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
