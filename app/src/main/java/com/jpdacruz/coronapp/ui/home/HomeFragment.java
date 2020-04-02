@@ -51,6 +51,18 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
+    private void iniciarComponentes(View root) {
+
+        Log.d(TAG,"INICIANDO COMPONENTES");
+
+        totalConfirmados = root.findViewById(R.id.textViewConfirmadosNumber);
+        totalFallecidos = root.findViewById(R.id.textViewFallecidosNumber);
+        totalRecuperados = root.findViewById(R.id.textViewRecuperadosNumber);
+        lastUpdated = root.findViewById(R.id.textViewLastUpdate);
+
+        progressBar = root.findViewById(R.id.progressBar);
+    }
+
     private void initViewModel() {
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<HomeEntity>() {
@@ -64,17 +76,5 @@ public class HomeFragment extends Fragment {
                 progressBar.setVisibility(View.GONE);
             }
         });
-    }
-
-    private void iniciarComponentes(View root) {
-
-        Log.d(TAG,"INICIANDO COMPONENTES");
-
-        totalConfirmados = root.findViewById(R.id.textViewConfirmadosNumber);
-        totalFallecidos = root.findViewById(R.id.textViewFallecidosNumber);
-        totalRecuperados = root.findViewById(R.id.textViewRecuperadosNumber);
-        lastUpdated = root.findViewById(R.id.textViewLastUpdate);
-
-        progressBar = root.findViewById(R.id.progressBar);
     }
 }

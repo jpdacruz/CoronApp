@@ -51,6 +51,12 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
         else return 0;
     }
 
+    public void setData(List<CountryEntity> countries){
+
+        this.countryEntityList = countries;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mPais, mTotalCases, mTotalFallecidos;

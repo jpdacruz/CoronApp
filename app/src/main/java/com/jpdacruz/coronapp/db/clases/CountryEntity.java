@@ -12,6 +12,7 @@ public class CountryEntity {
     private String critical;
     private String casesPerOneMillion;
     private String deathsPerOneMillion;
+    private String updated;
 
     public CountryEntity() {
     }
@@ -94,5 +95,13 @@ public class CountryEntity {
 
     public void setDeathsPerOneMillion(String deathsPerOneMillion) {
         this.deathsPerOneMillion = deathsPerOneMillion;
+    }
+
+    public String getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(String updated) {
+        this.updated = updated;
     }
 }
