@@ -14,6 +14,7 @@ public class CountryEntity implements Serializable {
     private String critical;
     private String casesPerOneMillion;
     private String deathsPerOneMillion;
+    private String flag;
     private String updated;
 
     public CountryEntity() {
@@ -99,6 +100,14 @@ public class CountryEntity implements Serializable {
         this.deathsPerOneMillion = deathsPerOneMillion;
     }
 
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
     public String getUpdated() {
         return updated;
     }
@@ -107,20 +116,5 @@ public class CountryEntity implements Serializable {
         this.updated = updated;
     }
 
-    @Override
-    public String toString() {
-        return "CountryEntity{" +
-                "country='" + country + '\'' +
-                ", cases='" + cases + '\'' +
-                ", todayCases='" + todayCases + '\'' +
-                ", deaths='" + deaths + '\'' +
-                ", todayDeaths='" + todayDeaths + '\'' +
-                ", recovered='" + recovered + '\'' +
-                ", active='" + active + '\'' +
-                ", critical='" + critical + '\'' +
-                ", casesPerOneMillion='" + casesPerOneMillion + '\'' +
-                ", deathsPerOneMillion='" + deathsPerOneMillion + '\'' +
-                ", updated='" + updated + '\'' +
-                '}';
-    }
+
 }

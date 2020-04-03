@@ -3,8 +3,11 @@ package com.jpdacruz.coronapp.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.jpdacruz.coronapp.R;
 import com.jpdacruz.coronapp.db.clases.CountryEntity;
 
@@ -12,6 +15,8 @@ public class CountryActivity extends AppCompatActivity {
 
     private TextView mPais, mCasos, mCasosHoy, mDeath,mDeathHoy, mSanados
             , mCasosActivos, mCasosCriticos, mCasosPorMillon, mDeathbyMillions, mUpdate;
+
+    private ImageView imageViewFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,7 @@ public class CountryActivity extends AppCompatActivity {
         mCasosPorMillon = findViewById(R.id.textViewCasosMillon);
         mDeathbyMillions = findViewById(R.id.textViewFallecidosMillon);
         mUpdate = findViewById(R.id.textViewLastUpdateCountry);
+        imageViewFlag = findViewById(R.id.imageViewFlagCountry);
     }
 
     private void comprobarBundle() {
@@ -64,5 +70,11 @@ public class CountryActivity extends AppCompatActivity {
         mCasosPorMillon.setText(String.format("Casos por millón habitantes: %s", countryEntity.getCasesPerOneMillion()));
         mDeathbyMillions.setText(String.format("Fallecidos por millón habitantes: %s", countryEntity.getDeathsPerOneMillion()));
         mUpdate.setText(String.format("Ultima actualización\n%s", countryEntity.getUpdated()));
+
+        Glide.with(getApplicationContext())
+                .load(countryEntity
+                        .getFlag())
+                .apply(new RequestOptions().override(300,200))
+                .into(imageViewFlag);
     }
 }

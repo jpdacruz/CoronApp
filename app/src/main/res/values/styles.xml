@@ -1,11 +1,87 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="LabelStyleImportant">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colortextimportant</item>
+    </style>
+
+    <style name="LabelStyleMajor">
+        <item name="fontFamily"></item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colortextMinor</item>
+    </style>
+
+    <style name="LabelStyleMinor">
+        <item name="fontFamily"></item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/colortextMinor</item>
+    </style>
+
+    <style name="TitleStyleImportant">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="TitleStyleMinor">
+        <item name="fontFamily"></item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colortextMinor</item>
+    </style>
+
+    <style name="CasesStyleImportant">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorcasesconfirmed</item>
+    </style>
+
+    <style name="CasesStyleMinor">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorcasesconfirmed</item>
+    </style>
+
+    <style name="DeahtStyleImportant">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colordeath</item>
+    </style>
+
+    <style name="DeathStyleMinor">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colordeath</item>
+    </style>
+
+    <style name="RecoveredStyleImportant">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorcasesrecovered</item>
+    </style>
+
+    <style name="RecoveredStyleMinor">
+        <item name="fontFamily"></item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorcasesrecovered</item>
+    </style>
+
 
 </resources>

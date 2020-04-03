@@ -82,6 +82,7 @@ public class Repository implements InterfaceGeneral {
                                 for (int i = 0; i < jsonArray.length(); i++) {
 
                                     JSONObject data = jsonArray.getJSONObject(i);
+                                    JSONObject countryInfo = data.getJSONObject("countryInfo");
 
                                     CountryEntity countryEntity = new CountryEntity();
                                     countryEntity.setCountry(data.getString("country"));
@@ -95,6 +96,8 @@ public class Repository implements InterfaceGeneral {
                                     countryEntity.setCasesPerOneMillion(data.getString("casesPerOneMillion"));
                                     countryEntity.setDeathsPerOneMillion(data.getString("deathsPerOneMillion"));
                                     countryEntity.setUpdated(getHoraUpdate(data.getLong("updated")));
+
+                                    countryEntity.setFlag(countryInfo.getString("flag"));
 
                                     countryEntityList.add(countryEntity);
                                 }

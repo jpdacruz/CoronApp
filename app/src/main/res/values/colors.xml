@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-
-    <color name="colorbackground">#222327</color>
-    <color name="colorfondo">#111111</color>
+    <color name="colorPrimary">#0f7edd</color>
+    <color name="colorPrimaryDark">#BBBBBB</color>
+    <color name="colorAccent">#0a467c</color>
+    <color name="colorAzul">#0f7edd</color>
+    <color name="colorPink">#e0245e</color>
+    <color name="colortextimportant">#222222</color>
+    <color name="colortextMinor">#717171</color>
     <color name="colortextconfirmed">#d6d6d6</color>
     <color name="colorcasesconfirmed">#e60000</color>
-    <color name="colorcasesrecovered">#7bb974</color>
-    <color name="colordeath">#999999</color>
-    <color name="colorcontriesafected">#803A3A</color>
+    <color name="colorcasesrecovered">#388E3C</color>
+    <color name="colordeath">#383838</color>
+    <color name="colorcontriesafected">#0a467c</color>
+
+    383838
+    <!-- green -->
+    <color name="md_green_50">#E8F5E9</color>
+    <color name="md_green_100">#C8E6C9</color>
+    <color name="md_green_200">#A5D6A7</color>
+    <color name="md_green_300">#81C784</color>
+    <color name="md_green_400">#66BB6A</color>
+    <color name="md_green_500">#4CAF50</color>
+    <color name="md_green_600">#43A047</color>
+    <color name="md_green_700">#388E3C</color>
+    <color name="md_green_800">#2E7D32</color>
+    <color name="md_green_900">#1B5E20</color>
+    <color name="md_green_A100">#B9F6CA</color>
+    <color name="md_green_A200">#69F0AE</color>
+    <color name="md_green_A400">#00E676</color>
+    <color name="md_green_A700">#00C853</color>
 
 </resources>
