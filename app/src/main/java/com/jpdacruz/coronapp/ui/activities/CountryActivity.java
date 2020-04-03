@@ -60,16 +60,16 @@ public class CountryActivity extends AppCompatActivity {
     private void asignarValores(CountryEntity countryEntity) {
 
         mPais.setText(countryEntity.getCountry());
-        mCasos.setText(String.format("Casos: %s", countryEntity.getCases()));
-        mCasosHoy.setText(String.format("Casos hoy: %s", countryEntity.getTodayCases()));
-        mDeath.setText(String.format("Fallecidos: %s", countryEntity.getDeaths()));
-        mDeathHoy.setText(String.format("Fallecidos hoy: %s", countryEntity.getTodayDeaths()));
-        mSanados.setText(String.format("Sanados: %s", countryEntity.getRecovered()));
-        mCasosActivos.setText(String.format("Casos activos: %s", countryEntity.getActive()));
-        mCasosCriticos.setText(String.format("Casos Criticos: %s", countryEntity.getCritical()));
-        mCasosPorMillon.setText(String.format("Casos por millón habitantes: %s", countryEntity.getCasesPerOneMillion()));
-        mDeathbyMillions.setText(String.format("Fallecidos por millón habitantes: %s", countryEntity.getDeathsPerOneMillion()));
-        mUpdate.setText(String.format("Ultima actualización\n%s", countryEntity.getUpdated()));
+        mCasos.setText(countryEntity.getCases());
+        mCasosHoy.setText(countryEntity.getTodayCases());
+        mDeath.setText(countryEntity.getDeaths());
+        mDeathHoy.setText(countryEntity.getTodayDeaths());
+        mSanados.setText(countryEntity.getRecovered());
+        mCasosActivos.setText(countryEntity.getActive());
+        mCasosCriticos.setText(countryEntity.getCritical());
+        mCasosPorMillon.setText(countryEntity.getCasesPerOneMillion());
+        mDeathbyMillions.setText(countryEntity.getDeathsPerOneMillion());
+        mUpdate.setText(String.format("Actualizado al\n%s", countryEntity.getUpdated()));
 
         Glide.with(getApplicationContext())
                 .load(countryEntity
