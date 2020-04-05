@@ -9,7 +9,8 @@ Paso de datos entre Fragmentos Callback
 
 Resumen de los layouts
 
-Main Activity. Carga el BottonNavigation . 3 fragemtos con Navigation para los datos
+Main Activity. Carga el BottonNavigation . 3 fragmentos con Navigation para los datos
+Maps: API microsoft Bing, bing.covid-19
 Country activity, para visualizar los datos por pais
 
-Trabajando en este momento en la splah activity + mapa interactivo + graficos estadisticos cada pais.
+Trabajando en este momento en la splah activity.
