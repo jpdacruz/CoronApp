@@ -18,125 +18,291 @@
         tools:text="China" />
 
     <TextView
-        android:id="@+id/textViewCasos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        style="@style/CasesStyleMinor"
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colordeath"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPais"
-        tools:text="Casos: 150520" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSanados" />
 
     <TextView
-        android:id="@+id/textViewCasosHoy"
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colordeath"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCasosHoy" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colordeath"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidos" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colordeath"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewActivos" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colordeath"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidosMillon" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/RecoveredStyleMinor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        style="@style/CasesStyleMinor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCasos"
-        tools:text="Casos hoy: 1505" />
-
-    <TextView
-        android:id="@+id/textViewFallecidos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/DeathStyleMinor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCasosHoy"
-        tools:text="Fallecidos: 15005" />
-
-    <TextView
-        android:id="@+id/textViewFallecidosHoy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/DeathStyleMinor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidos"
-        tools:text="Fallecidos hoy: 15005" />
+        android:text="Personas Sanadas"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPais"
+        app:layout_constraintStart_toStartOf="@+id/textViewPais"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPais" />
 
     <TextView
         android:id="@+id/textViewSanados"
+        style="@style/RecoveredStyleMajor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPais"
+        app:layout_constraintStart_toStartOf="@+id/textViewPais"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:text="155005" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/CasesStyleMinor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        style="@style/RecoveredStyleMinor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidosHoy"
-        tools:text="Sanados: 155005" />
+        android:text="Casos"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSanados" />
+
+    <TextView
+        android:id="@+id/textViewCasosHoy"
+        style="@style/CasesStyleMajor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:text="1505" />
+
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/CasesStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Casos hoy"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSanados" />
+
+    <TextView
+        android:id="@+id/textViewCasos"
+        style="@style/CasesStyleMajor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="150520" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/LabelStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Activos criticos"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFallecidosHoy"
+        app:layout_constraintStart_toStartOf="@+id/textViewFallecidosHoy"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidosHoy" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/DeathStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Fallecidos hoy"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCasosHoy" />
+
+
+
+    <TextView
+        android:id="@+id/textViewFallecidos"
+        style="@style/DeathStyleMajor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:text="15005" />
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/DeathStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/fallecidos"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCasos" />
+    <TextView
+        android:id="@+id/textViewFallecidosHoy"
+        style="@style/DeathStyleMajor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:text="15005" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/LabelStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Fallecidos por millón"
+        app:layout_constraintEnd_toEndOf="@+id/textViewCriticos"
+        app:layout_constraintStart_toStartOf="@+id/textViewCriticos"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCriticos" />
+
 
     <TextView
         android:id="@+id/textViewActivos"
+        style="@style/LabelStyleMajor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/LabelStyleMajor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSanados"
-        tools:text="Enfermos: 55005" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:text="55005" />
 
     <TextView
         android:id="@+id/textViewCriticos"
+        style="@style/LabelStyleMajor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/LabelStyleMajor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewActivos"
-        tools:text="Enfermos criticos: 5005" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:text="5005" />
 
     <TextView
         android:id="@+id/textViewCasosMillon"
+        style="@style/LabelStyleMajor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/LabelStyleMajor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCriticos"
-        tools:text="Casos por Millon: 5" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:text="5" />
 
     <TextView
         android:id="@+id/textViewFallecidosMillon"
+        style="@style/LabelStyleMajor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/LabelStyleMajor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCasosMillon"
-        tools:text="Fallecidos por Millon: 5" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:text="5" />
 
     <TextView
         android:id="@+id/textViewLastUpdateCountry"
+        style="@style/LabelStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Ultima actualizacion" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/LabelStyleMinor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="center"
-        style="@style/LabelStyleMinor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidosMillon"
-        tools:text="Ultima actualizacion" />
+        android:text="Casos activos"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFallecidos"
+        app:layout_constraintStart_toStartOf="@+id/textViewFallecidos"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidos" />
 
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/LabelStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Casos por millón"
+        app:layout_constraintEnd_toEndOf="@+id/textViewActivos"
+        app:layout_constraintStart_toStartOf="@+id/textViewActivos"
+        app:layout_constraintTop_toBottomOf="@+id/textViewActivos" />
     <ImageView
         android:id="@+id/imageViewFlagCountry"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/us" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

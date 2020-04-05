@@ -85,7 +85,20 @@ public class Repository implements InterfaceGeneral {
                                     JSONObject countryInfo = data.getJSONObject("countryInfo");
 
                                     CountryEntity countryEntity = new CountryEntity();
-                                    countryEntity.setCountry(data.getString("country"));
+
+                                    String malvinas = data.getString("country");
+
+                                    if (malvinas.equals("Falkland Islands")){
+
+                                        countryEntity.setCountry("Islas Malvinas");
+                                        countryEntity.setFlag("https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ar.png");
+
+                                    }else {
+
+                                        countryEntity.setCountry(data.getString("country"));
+                                        countryEntity.setFlag(countryInfo.getString("flag"));
+                                    }
+
                                     countryEntity.setCases(data.getString("cases"));
                                     countryEntity.setTodayCases(data.getString("todayCases"));
                                     countryEntity.setDeaths(data.getString("deaths"));
@@ -96,8 +109,6 @@ public class Repository implements InterfaceGeneral {
                                     countryEntity.setCasesPerOneMillion(data.getString("casesPerOneMillion"));
                                     countryEntity.setDeathsPerOneMillion(data.getString("deathsPerOneMillion"));
                                     countryEntity.setUpdated(getHoraUpdate(data.getLong("updated")));
-
-                                    countryEntity.setFlag(countryInfo.getString("flag"));
 
                                     countryEntityList.add(countryEntity);
                                 }

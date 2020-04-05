@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.jpdacruz.coronapp.R;
 import com.jpdacruz.coronapp.db.clases.CountryEntity;
@@ -46,12 +48,13 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
         CountryEntity countryEntity = countryEntityList.get(position);
         holder.mPais.setText(countryEntity.getCountry());
         holder.mTotalCases.setText(String.format("Casos: %s", countryEntity.getCases()));
-        holder.mTotalFallecidos.setText(String.format("Fallecidos: %s", countryEntity.getDeaths()));
 
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions = requestOptions.override(240,160).transform(new CenterCrop(), new RoundedCorners(16));
         Glide.with(ctx)
                 .load(countryEntity
                 .getFlag())
-                .apply(new RequestOptions().override(240,160))
+                .apply(requestOptions)
                 .into(holder.imageViewFlag);
     }
 
@@ -87,7 +90,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView mPais, mTotalCases, mTotalFallecidos;
+        private TextView mPais, mTotalCases;
         private ImageView imageViewFlag;
 
         public ViewHolder(@NonNull View itemView) {
@@ -96,7 +99,6 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
 
             mPais = itemView.findViewById(R.id.textViewPais);
             mTotalCases = itemView.findViewById(R.id.textViewCountriesConfirmadosNumber);
-            mTotalFallecidos = itemView.findViewById(R.id.textViewCountriesFallecidosNumber);
             imageViewFlag = itemView.findViewById(R.id.imageViewFlag);
         }
     }

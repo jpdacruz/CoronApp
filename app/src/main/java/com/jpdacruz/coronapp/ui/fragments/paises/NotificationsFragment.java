@@ -34,7 +34,7 @@ public class NotificationsFragment extends Fragment {
     private HomeViewModel homeViewModel;
 
     //widgets
-    private TextView mCountry, mCases, mDeath;
+    private TextView mCountry, mCases;
     private RecyclerView recyclerViewCountries;
     private ProgressBar progressBar;
     private CountriesAdapter adapter;
@@ -64,7 +64,6 @@ public class NotificationsFragment extends Fragment {
         progressBar = root.findViewById(R.id.progressBarPaises);
         mCountry = root.findViewById(R.id.textViewPais);
         mCases = root.findViewById(R.id.textViewCountriesConfirmadosNumber);
-        mDeath = root.findViewById(R.id.textViewCountriesFallecidosNumber);
         paisesAfectados = root.findViewById(R.id.textViewPaisesAfectados);
     }
 
