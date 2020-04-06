@@ -86,9 +86,7 @@ public class Repository implements InterfaceGeneral {
 
                                     CountryEntity countryEntity = new CountryEntity();
 
-                                    String malvinas = data.getString("country");
-
-                                    if (malvinas.equals("Falkland Islands")){
+                                    if (data.getString("country").equals("Falkland Islands (Malvinas)")){
 
                                         countryEntity.setCountry("Islas Malvinas");
                                         countryEntity.setFlag("https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ar.png");
