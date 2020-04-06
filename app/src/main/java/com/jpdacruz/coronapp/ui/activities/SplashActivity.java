@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView imageViewFoto;
-    private TextView frase, autor;
+    private TextView frase, autor, contadorTv;
     private int contador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,13 +99,15 @@ public class SplashActivity extends AppCompatActivity {
                         R.drawable.nightingale));
 
         frasesCelebres.add(new FrasesCelebres
-                ("Todavia en el pueblo quedaba un grupo de mujeres que podían ayudar. Llegamos a la larga hilera de soldados heridos apoyados unos con otros. Sufrían sin quejarse, y morían humildemente ,sin ruido.\nBatalla de Solferino 1859",
+                ("Todavia quedaba en el pueblo un grupo de mujeres que podían ayudar. Llegamos a la larga hilera de soldados heridos apoyados unos con otros. Sufrían sin quejarse, y morían humildemente ,sin ruido.\nBatalla de Solferino 1859",
                         "Henry Dunant Empresario Suizo\nFundador de la Cruz Roja \ny la Media Luna Roja Internacional",
                         R.drawable.henry_dunant));
 
         imageViewFoto.setImageResource(frasesCelebres.get(contador).getFoto());
         frase.setText(frasesCelebres.get(contador).getFrase());
         autor.setText(frasesCelebres.get(contador).getAutor());
+        contadorTv.setText(contador+1 +"/10");
+
     }
 
     private void iniciarComponentes() {
@@ -113,6 +115,7 @@ public class SplashActivity extends AppCompatActivity {
         imageViewFoto = findViewById(R.id.imageViewFotoMedico);
         frase = findViewById(R.id.textViewTexto);
         autor = findViewById(R.id.textViewAutor);
+        contadorTv = findViewById(R.id.textViewContador);
     }
 
     public void continuar(View view) {

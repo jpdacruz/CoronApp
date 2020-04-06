@@ -13,5 +13,8 @@
     <string name="fallecidos">Fallecidos</string>
     <string name="activos">Casos activos</string>
     <string name="criticos">Casos críticos</string>
+    <string name="dudassugerencias">Dudas? Sugerencias? Escríbeme!</string>
+    <string name="casosmillos">Casos por millón \nde habitantes</string>
+    <string name="fallecidomillon">Fallecidos por millón\nde habitantes</string>
 
 </resources>

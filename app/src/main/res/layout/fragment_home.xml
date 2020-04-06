@@ -40,57 +40,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle2" />
 
-        <TextView
-            android:id="@+id/textViewRecuperados"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/totalrecuperados"
-            android:textAlignment="center"
-            style="@style/RecoveredStyleMinor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewFallecidosNumber" />
-
-        <TextView
-            android:id="@+id/textViewfallecidos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/totalfallecidos"
-            android:textAlignment="center"
-            style="@style/DeathStyleMinor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewConfirmadosNumber" />
+    <TextView
+        android:id="@+id/textViewRecuperados"
+        style="@style/RecoveredStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalrecuperados"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFallecidosNumber" />
 
     <TextView
-            android:id="@+id/textViewConfirmadosNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CasesStyleImportant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewConfirmados"
-            tools:text="850456" />
-
-        <TextView
-            android:id="@+id/textViewRecuperadosNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/RecoveredStyleImportant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRecuperados"
-            tools:text="650456" />
+        android:id="@+id/textViewfallecidos"
+        style="@style/DeathStyleMinor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalfallecidos"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewConfirmadosNumber" />
 
     <TextView
-            android:id="@+id/textViewFallecidosNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/DeahtStyleImportant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewfallecidos"
-            tools:text="420456" />
+        android:id="@+id/textViewConfirmadosNumber"
+        style="@style/CasesStyleImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewConfirmados"
+        tools:text="850456" />
+
+    <TextView
+        android:id="@+id/textViewRecuperadosNumber"
+        style="@style/RecoveredStyleImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRecuperados"
+        tools:text="650456" />
+
+    <TextView
+        android:id="@+id/textViewFallecidosNumber"
+        style="@style/DeahtStyleImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewfallecidos"
+        tools:text="420456" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -106,11 +106,11 @@
         android:id="@+id/imageView5"
         android:layout_width="100dp"
         android:layout_height="140dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/femaledoctorfinal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonFace" />
 
     <TextView
         android:id="@+id/textViewLastUpdate"
@@ -123,6 +123,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRecuperadosNumber"
         tools:text="Actualizada al\n Martes 2 de abril 2020 1:20:35" />
+
+    <Button
+        android:id="@+id/buttonFace"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/facebook_logo"
+        android:stateListAnimator="@null"
+        app:layout_constraintEnd_toStartOf="@+id/buttonInstagram"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonInstagram"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/instagram_logo"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFace"
+        app:layout_constraintEnd_toStartOf="@+id/buttonWhatapp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonFace" />
+
+    <Button
+        android:id="@+id/buttonWhatapp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/logo_ws"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonInstagram"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonInstagram" />
+
+    <Button
+        android:id="@+id/buttonMail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/mail_logo"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonWhatapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonWhatapp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
