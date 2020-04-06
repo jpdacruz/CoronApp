@@ -17,4 +17,7 @@
     <string name="casosmillos">Casos por millón \nde habitantes</string>
     <string name="fallecidomillon">Fallecidos por millón\nde habitantes</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

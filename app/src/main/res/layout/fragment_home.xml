@@ -100,17 +100,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="100dp"
         android:layout_height="140dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/femaledoctorfinal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFace" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewLastUpdate"
@@ -125,49 +125,27 @@
         tools:text="Actualizada al\n Martes 2 de abril 2020 1:20:35" />
 
     <Button
-        android:id="@+id/buttonFace"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/facebook_logo"
-        android:stateListAnimator="@null"
-        app:layout_constraintEnd_toStartOf="@+id/buttonInstagram"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonInstagram"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/instagram_logo"
-        android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonFace"
-        app:layout_constraintEnd_toStartOf="@+id/buttonWhatapp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonFace" />
-
-    <Button
-        android:id="@+id/buttonWhatapp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/logo_ws"
-        android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonInstagram"
-        app:layout_constraintEnd_toStartOf="@+id/buttonMail"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonInstagram" />
-
-    <Button
         android:id="@+id/buttonMail"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/mail_logo"
         android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonWhatapp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonWhatapp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Dudas ? sugerencias?"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMail"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMail"
+        app:layout_constraintTop_toTopOf="@+id/buttonMail" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
