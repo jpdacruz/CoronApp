@@ -23,6 +23,8 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Repository implements InterfaceGeneral {
@@ -99,7 +101,7 @@ public class Repository implements InterfaceGeneral {
 
                                     countryEntity.setCases(data.getString("cases"));
                                     countryEntity.setTodayCases(data.getString("todayCases"));
-                                    countryEntity.setDeaths(data.getString("deaths"));
+                                    countryEntity.setDeaths(data.getInt("deaths"));
                                     countryEntity.setTodayDeaths(data.getString("todayDeaths"));
                                     countryEntity.setRecovered(data.getString("recovered"));
                                     countryEntity.setActive(data.getString("active"));
