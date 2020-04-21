@@ -2,10 +2,12 @@ package com.jpdacruz.coronapp.ui.fragments.paises;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,14 +24,15 @@ import com.jpdacruz.coronapp.db.clases.HomeEntity;
 import com.jpdacruz.coronapp.ui.fragments.home.HomeViewModel;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotificationsFragment extends Fragment {
 
     //vars
     private static final String TAG = "NotificationsFragment";
-
     private List<CountryEntity> countryEntityList;
+    private List<CountryEntity> countryEntitiesEncontrado;
     private NotificationsViewModel notificationsViewModel;
     private HomeViewModel homeViewModel;
 
@@ -38,12 +41,16 @@ public class NotificationsFragment extends Fragment {
     private RecyclerView recyclerViewCountries;
     private ProgressBar progressBar;
     private CountriesAdapter adapter;
+    private CountriesAdapter adapterEncontrados;
     private TextView paisesAfectados;
+    private SearchView searchView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         notificationsViewModel =
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
+
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
 
@@ -54,6 +61,8 @@ public class NotificationsFragment extends Fragment {
         iniciarViewModel();
         setPaisesAfectados();
         iniciarListenerRecycler();
+        iniciarSearchView();
+
 
         return root;
     }
@@ -65,17 +74,9 @@ public class NotificationsFragment extends Fragment {
         mCountry = root.findViewById(R.id.textViewPais);
         mCases = root.findViewById(R.id.textViewCountriesConfirmadosNumber);
         paisesAfectados = root.findViewById(R.id.textViewPaisesAfectados);
-    }
-
-    private void setPaisesAfectados() {
-
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<HomeEntity>() {
-            @Override
-            public void onChanged(HomeEntity homeEntity) {
-
-                paisesAfectados.setText(String.format("Paises afectados: %s", homeEntity.getAffectedCountries()));
-            }
-        });
+        searchView = root.findViewById(R.id.searchview);
+        searchView.setQueryHint("Buscar Pais:");
+        searchView.setMaxWidth(6);
     }
 
     private void iniciarAdapter() {
@@ -98,6 +99,17 @@ public class NotificationsFragment extends Fragment {
         });
     }
 
+    private void setPaisesAfectados() {
+
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<HomeEntity>() {
+            @Override
+            public void onChanged(HomeEntity homeEntity) {
+
+                paisesAfectados.setText(String.format("Paises afectados: %s", homeEntity.getAffectedCountries()));
+            }
+        });
+    }
+
     private void iniciarListenerRecycler() {
 
         adapter.setOnClickListener(new View.OnClickListener() {
@@ -111,5 +123,55 @@ public class NotificationsFragment extends Fragment {
                 startActivity(intent);
             }
         });
+    }
+
+    private void iniciarSearchView() {
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                buscarCountry(newText);
+                return true;
+            }
+
+        });
+    }
+
+    private void buscarCountry(String newText) {
+
+        Log.d(TAG,"buscando operador");
+
+        countryEntitiesEncontrado = new ArrayList<>();
+
+        for (CountryEntity countryEncontrado : countryEntityList){
+
+            if(countryEncontrado.getCountry().toLowerCase().contains(newText.toLowerCase())){
+
+                countryEntitiesEncontrado.add(countryEncontrado);
+            }
+            Log.d(TAG,"seteando recycler operadores encontrados");
+
+            adapterEncontrados = new CountriesAdapter(countryEntitiesEncontrado, getActivity());
+            recyclerViewCountries.setAdapter(adapterEncontrados);
+
+            adapterEncontrados.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    CountryEntity countryEntity =countryEntitiesEncontrado.get(recyclerViewCountries.getChildAdapterPosition(v));
+
+                    Intent intent = new Intent(getActivity(), CountryActivity.class);
+                    intent.putExtra("info",countryEntity);
+                    startActivity(intent);
+
+                }
+            });
+        }
     }
 }

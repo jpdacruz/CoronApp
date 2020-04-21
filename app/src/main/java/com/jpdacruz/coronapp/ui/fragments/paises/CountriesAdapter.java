@@ -47,7 +47,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
 
         CountryEntity countryEntity = countryEntityList.get(position);
         holder.mPais.setText(countryEntity.getCountry());
-        holder.mTotalCases.setText(String.format("Casos: %s", countryEntity.getCases()));
+        holder.mTotalDeath.setText(String.format("Fallecidos: %s", countryEntity.getDeaths()));
 
         RequestOptions requestOptions = new RequestOptions();
         requestOptions = requestOptions.override(240,160).transform(new CenterCrop(), new RoundedCorners(16));
@@ -90,7 +90,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView mPais, mTotalCases;
+        private TextView mPais, mTotalDeath;
         private ImageView imageViewFlag;
 
         public ViewHolder(@NonNull View itemView) {
@@ -98,7 +98,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
             super(itemView);
 
             mPais = itemView.findViewById(R.id.textViewPais);
-            mTotalCases = itemView.findViewById(R.id.textViewCountriesConfirmadosNumber);
+            mTotalDeath = itemView.findViewById(R.id.textViewCountriesConfirmadosNumber);
             imageViewFlag = itemView.findViewById(R.id.imageViewFlag);
         }
     }

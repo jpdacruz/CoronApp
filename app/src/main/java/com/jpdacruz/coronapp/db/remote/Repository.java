@@ -113,7 +113,9 @@ public class Repository implements InterfaceGeneral {
                                     countryEntityList.add(countryEntity);
                                 }
 
-                                mCountryEntity.setValue(countryEntityList);
+                                mCountryEntity.setValue(ordenarPaises(countryEntityList));
+
+
 
                             } catch (JSONException e) {
 
@@ -131,6 +133,25 @@ public class Repository implements InterfaceGeneral {
                         });
 
         requestQueue.add(stringRequest);
+    }
+
+    private ArrayList<CountryEntity> ordenarPaises(ArrayList<CountryEntity> countryEntityList) {
+
+            int in;
+
+            for (int i = 1 ; i < countryEntityList.size() ; i++) {
+                CountryEntity aux = countryEntityList.get(i);
+                in = i;
+
+                while (in > 0 && countryEntityList.get(in - 1).getDeaths() < aux.getDeaths()) {
+                    countryEntityList.set(in, countryEntityList.get(in - 1));    //desplaza el elemento hacia la derecha
+                    --in;
+                }
+
+                countryEntityList.set(in, aux);    //inserta elemento
+            }
+
+            return countryEntityList;
     }
 
     private void volleyGetAll() {

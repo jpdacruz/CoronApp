@@ -7,7 +7,7 @@ public class CountryEntity implements Serializable {
     private String country;
     private String cases;
     private String todayCases;
-    private String deaths;
+    private int deaths;
     private String todayDeaths;
     private String recovered;
     private String active;
@@ -44,11 +44,11 @@ public class CountryEntity implements Serializable {
         this.todayCases = todayCases;
     }
 
-    public String getDeaths() {
+    public int getDeaths() {
         return deaths;
     }
 
-    public void setDeaths(String deaths) {
+    public void setDeaths(int deaths) {
         this.deaths = deaths;
     }
 
@@ -115,6 +115,5 @@ public class CountryEntity implements Serializable {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
-
 
 }

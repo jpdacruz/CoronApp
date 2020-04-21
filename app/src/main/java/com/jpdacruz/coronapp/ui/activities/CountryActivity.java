@@ -62,7 +62,7 @@ public class CountryActivity extends AppCompatActivity {
         mPais.setText(countryEntity.getCountry());
         mCasos.setText(countryEntity.getCases());
         mCasosHoy.setText(countryEntity.getTodayCases());
-        mDeath.setText(countryEntity.getDeaths());
+        mDeath.setText(String.valueOf(countryEntity.getDeaths()));
         mDeathHoy.setText(countryEntity.getTodayDeaths());
         mSanados.setText(countryEntity.getRecovered());
         mCasosActivos.setText(countryEntity.getActive());
