@@ -116,7 +116,7 @@ public class Repository implements InterfaceGeneral {
 
                                     countryEntity.setCases(data.getString("cases"));
                                     countryEntity.setTodayCases(data.getString("todayCases"));
-                                    countryEntity.setDeaths(data.getInt("deaths"));
+                                    countryEntity.setDeaths(data.getString("deaths"));
                                     countryEntity.setTodayDeaths(data.getString("todayDeaths"));
                                     countryEntity.setRecovered(data.getString("recovered"));
                                     countryEntity.setActive(data.getString("active"));
