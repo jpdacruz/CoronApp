@@ -45,6 +45,9 @@ public class CountryActivity extends AppCompatActivity {
 
     private void comprobarBundle() {
 
+        /**
+         * recibe los datos del pais a mostrar como bundle
+         */
         Bundle bundle = getIntent().getExtras();
 
         CountryEntity countryEntity = null;
@@ -71,6 +74,9 @@ public class CountryActivity extends AppCompatActivity {
         mDeathbyMillions.setText(countryEntity.getDeathsPerOneMillion());
         mUpdate.setText(String.format("Actualizado al\n%s", countryEntity.getUpdated()));
 
+        /**
+         * utilizo glide para imagen de bandera del pais. tamaño 300*200dp
+         */
         Glide.with(getApplicationContext())
                 .load(countryEntity
                         .getFlag())

@@ -18,10 +18,10 @@ public class NotificationsViewModel extends ViewModel {
     public NotificationsViewModel() {
         repository = new Repository();
         mCountriesList = repository.getContryList();
-
     }
 
     public MutableLiveData<List<CountryEntity>> getmCountriesList() {
+
         return mCountriesList;
     }
 }

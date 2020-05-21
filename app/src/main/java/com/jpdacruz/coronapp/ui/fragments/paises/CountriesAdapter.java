@@ -49,6 +49,9 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
         holder.mPais.setText(countryEntity.getCountry());
         holder.mTotalDeath.setText(String.format("Fallecidos: %s", countryEntity.getDeaths()));
 
+        /**
+         * customizando la imagen que se le pasa al glide
+         */
         RequestOptions requestOptions = new RequestOptions();
         requestOptions = requestOptions.override(240,160).transform(new CenterCrop(), new RoundedCorners(16));
         Glide.with(ctx)
@@ -68,10 +71,19 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
         else return 0;
     }
 
+    /**
+     *listener de seleccion de pais
+     * @param listener
+     */
     public void setOnClickListener(View.OnClickListener listener) {
         this.listener = listener;
     }
 
+    /**
+     * metodo para asignar listado paises a List de paises del adapter
+     * notifica los cambios del DataSet
+     * @param countries
+     */
     public void setData(List<CountryEntity> countries){
 
         this.countryEntityList = countries;

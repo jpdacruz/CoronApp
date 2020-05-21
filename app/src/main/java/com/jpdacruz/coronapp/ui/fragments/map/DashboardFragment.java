@@ -38,6 +38,10 @@ public class DashboardFragment extends Fragment {
         myWebView = root.findViewById(R.id.webview);
         progressBar = root.findViewById(R.id.progressBarMap);
 
+        /**
+         * define la url en argentina
+         */
+
         url = "https://bing.com/covid/local/argentina?ref=opal&PC=OPALAND";
 
         myWebView.setWebViewClient(new WebViewClient());

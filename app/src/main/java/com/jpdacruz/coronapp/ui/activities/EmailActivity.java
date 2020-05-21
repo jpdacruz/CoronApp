@@ -41,6 +41,11 @@ public class EmailActivity extends AppCompatActivity {
 
     private void enviarMail() {
 
+        /**
+         * android sharesheet para enviar texto al mail de la app
+         * inicia intent de envio de mail
+         * debe tener configurado cuenta de email en el dispositivo
+         */
         String textoAenviar = editText.getText().toString();
         Intent emailIntent = new Intent();
         emailIntent.setAction(Intent.ACTION_SEND);

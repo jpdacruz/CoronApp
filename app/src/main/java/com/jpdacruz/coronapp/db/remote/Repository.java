@@ -38,11 +38,20 @@ public class Repository implements InterfaceGeneral {
     private HomeEntity homeEntity;
     private ArrayList<CountryEntity> countryEntityList;
 
+    /**
+     * constructor del repositorio -> vacio
+     */
     public Repository() {
 
-        //constructor vacio / se instancian los datos
+        /**
+         * instancia de datos a trabajar
+         */
         homeEntity = new HomeEntity();
         countryEntityList = new ArrayList<>();
+
+        /**
+         * instancia de datos a devolver
+         */
         mHomeEntity = new MutableLiveData<>();
         mCountryEntity = new MutableLiveData<>();
 
@@ -66,6 +75,9 @@ public class Repository implements InterfaceGeneral {
 
         String url = Constantes.URL_COUNTRIES;
 
+        /**
+         * obtiene el contexto de la clase MyApp
+         */
         RequestQueue requestQueue = Volley.newRequestQueue(MyApp.getContext());
 
         StringRequest stringRequest =
@@ -88,6 +100,9 @@ public class Repository implements InterfaceGeneral {
 
                                     CountryEntity countryEntity = new CountryEntity();
 
+                                    /**
+                                     * cambia nombre Fakland por Malvinas
+                                     */
                                     if (data.getString("country").equals("Falkland Islands (Malvinas)")){
 
                                         countryEntity.setCountry("Islas Malvinas");
@@ -113,9 +128,11 @@ public class Repository implements InterfaceGeneral {
                                     countryEntityList.add(countryEntity);
                                 }
 
+                                /**
+                                 * ordena los paises por cantidad de fallecidos
+                                 */
                                 mCountryEntity.setValue(ordenarPaises(countryEntityList));
-
-
+                                mCountryEntity.setValue(countryEntityList);
 
                             } catch (JSONException e) {
 
@@ -135,29 +152,12 @@ public class Repository implements InterfaceGeneral {
         requestQueue.add(stringRequest);
     }
 
-    private ArrayList<CountryEntity> ordenarPaises(ArrayList<CountryEntity> countryEntityList) {
-
-            int in;
-
-            for (int i = 1 ; i < countryEntityList.size() ; i++) {
-                CountryEntity aux = countryEntityList.get(i);
-                in = i;
-
-                while (in > 0 && countryEntityList.get(in - 1).getDeaths() < aux.getDeaths()) {
-                    countryEntityList.set(in, countryEntityList.get(in - 1));    //desplaza el elemento hacia la derecha
-                    --in;
-                }
-
-                countryEntityList.set(in, aux);    //inserta elemento
-            }
-
-            return countryEntityList;
-    }
-
+    /**
+     * metodo para obtener los datos a nivel global
+     */
     private void volleyGetAll() {
 
-
-        //lamada al request de volley
+        //llamada al request de volley
         RequestQueue queue = Volley.newRequestQueue(MyApp.getContext());
 
         //llamada get al sitio
@@ -168,7 +168,7 @@ public class Repository implements InterfaceGeneral {
 
                         try {
 
-                            JSONObject jsonObject = new JSONObject(response.toString());
+                            JSONObject jsonObject = new JSONObject(response);
 
                             homeEntity = new HomeEntity();
                             homeEntity.setCases(jsonObject.getString("cases"));
@@ -188,7 +188,7 @@ public class Repository implements InterfaceGeneral {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        //RECORDAR!!! error.tostring porque si no no se ve el codigo de error
+                        //RECORDAR!!! error.tostring porque si no, no se ve el codigo de error
                         Log.d(TAG, "ERROR RESPONSE " + error.toString());
                     }
                 });
@@ -196,6 +196,35 @@ public class Repository implements InterfaceGeneral {
         queue.add(stringRequest);
     }
 
+    private ArrayList<CountryEntity> ordenarPaises(ArrayList<CountryEntity> countryEntityList) {
+
+        /**
+         * ordenamiento burbuja de paises
+         * por cantidad de fallecidos
+         *
+         * VER PORQUE NO SE PUDO ORDENAR POR COMPARABLE O POR SORT
+         */
+        int in;
+
+        for (int i = 1 ; i < countryEntityList.size() ; i++) {
+            CountryEntity aux = countryEntityList.get(i);
+            in = i;
+
+            while (in > 0 && countryEntityList.get(in - 1).getDeaths() < aux.getDeaths()) {
+                countryEntityList.set(in, countryEntityList.get(in - 1));    //desplaza el elemento hacia la derecha
+                --in;
+            }
+
+            countryEntityList.set(in, aux);    //inserta elemento
+        }
+
+        return countryEntityList;
+    }
+
+    /**
+     * retorna el valor de la cantidad de paise afectados
+     * @return
+     */
     public String getAffectCountries(){
 
         return homeEntity.getAffectedCountries();

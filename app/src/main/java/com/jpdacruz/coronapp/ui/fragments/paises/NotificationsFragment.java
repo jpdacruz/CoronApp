@@ -63,7 +63,6 @@ public class NotificationsFragment extends Fragment {
         iniciarListenerRecycler();
         iniciarSearchView();
 
-
         return root;
     }
 
@@ -82,6 +81,9 @@ public class NotificationsFragment extends Fragment {
     private void iniciarAdapter() {
 
         recyclerViewCountries.setLayoutManager(new LinearLayoutManager(getActivity()));
+        /**
+         * envia al adaptar el List de Paises y el context de la actividad para el glide
+         */
         adapter = new CountriesAdapter(countryEntityList, getActivity());
         recyclerViewCountries.setAdapter(adapter);
     }
